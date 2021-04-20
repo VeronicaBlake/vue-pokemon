@@ -1,6 +1,6 @@
 <template>
   <div class="component container-fluid">
-    <div class="row">
+    <div class="row text-center">
       <div class="col">
         <form @submit.prevent="search">
           <label for="movie"></label>
@@ -20,6 +20,8 @@
 
 <script>
 import { reactive } from "vue";
+import { pokeService } from "../services/PokeService";
+import Results from "../components/ResultsComponent";
 
 export default {
   name: "HomePage",
@@ -29,6 +31,17 @@ export default {
     });
     return {
       state,
+      async search() {
+        try {
+          await pokeService.getPoke(state.query);
+          state.query = "";
+        } catch (e) {
+          console.error(e);
+        }
+      },
+      components: {
+        Results,
+      },
     };
   },
 };

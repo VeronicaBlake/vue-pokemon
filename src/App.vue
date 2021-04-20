@@ -1,5 +1,5 @@
 <template>
-  <h3>
+  <h3 class="text-center">
     <img class="logo" alt="Vue logo" src="./assets/logo.png" />eronica's Pokedex
   </h3>
   <HomePage />
@@ -17,15 +17,7 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 .logo {
-  max-block-size: 40px;
+  height: 1em;
 }
 </style>
